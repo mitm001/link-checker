@@ -18,14 +18,12 @@ jobs:
     - name: Clone repository
       run: git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki
 
+    # https://github.com/marketplace/actions/link-checker?version=v1.2.2
     - name: Link Checker
       uses: peter-evans/link-checker@v1
       with:
         args: -v -r *
 
-    # Detects any updates to package-lock.json and package.json and commits the
-    # files to root.
-    # see:
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
     # for use options.
     - name: Commit Packages
