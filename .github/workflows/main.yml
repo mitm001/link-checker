@@ -42,6 +42,9 @@ jobs:
     - name: Audit Depends
       run: npm audit
 
+    - name: List folders
+      run: ls -al ./usr/local/bin/
+
     - name: Check Website
 #      run: npm run linkCheckHelp
       run: npm run linkCheckWiki
