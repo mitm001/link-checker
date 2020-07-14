@@ -12,44 +12,16 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+
+    - name: Clone repository
+      run: git clone https://github.com/mitm001/jme-wiki
+
+    - name: Link Checker
+      uses: peter-evans/link-checker@v1
       with:
-        node-version: ${{ matrix.node-version }}
-    # Uncomment to write the default package.json file to the repo root.
-    # When used in conjunction with the action add-and-commit 'add' command, the
-    # file will be written to the repo for editing.
-#    - name: Install default package.json
-#      run: npm init --yes
-
-    # Uncomment when adding or updating dependencies in the package-lock.json
-    # and package.json files for ci.
-#    - name: Install Node
-#      run: |
-#        npm i
-#        npm install broken-link-checker
-
-    # Uncomment after package-lock.json and package.json files are updated.
-    - name: Run with CI
-      run: npm ci
-
-    - name: Audit Depends
-      run: npm audit
-
-    - name: Check Website
-#      run: npm run linkCheckHelp
-      run: npm run linkCheckWiki
-#      run: npm run linkCheckJmeWiki
-
-
-    - name: List folders
-      run: ls -al /usr/local/bin/
+        args: -v -r *
 
     # Detects any updates to package-lock.json and package.json and commits the
     # files to root.
@@ -63,6 +35,6 @@ jobs:
         author_email: mitm001@users.noreply.github.com
         message: "Commit files for CI workflow"
         # Commits these files to root if and only if there are changes.
-        add: "package-lock.json package.json"
+        add: "link-checker/out.md"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
