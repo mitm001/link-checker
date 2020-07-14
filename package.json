@@ -1,0 +1,23 @@
+{
+  "name": "link-checker",
+  "version": "1.0.0",
+  "description": "Website url tester.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitm001/link-checker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitm001/link-checker/issues"
+  },
+  "homepage": "https://github.com/mitm001/link-checker#readme",
+  "dependencies": {
+    "broken-link-checker": "^0.7.8"
+  }
+}
