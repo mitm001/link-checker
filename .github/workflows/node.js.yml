@@ -43,9 +43,9 @@ jobs:
       run: npm audit
 
     - name: Check Website
-#      run: npm run linkCheckHelp
+      run: npm run linkCheckHelp
 #      run: npm run linkCheckWiki
-      run: npm run linkCheckJmeWiki
+#      run: npm run linkCheckJmeWiki
 
     # Detects any updates to package-lock.json and package.json and commits the
     # files to root.
