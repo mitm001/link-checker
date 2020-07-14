@@ -1,0 +1,59 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    # Uncomment to write the default package.json file to the repo root.
+    # When used in conjunction with the action add-and-commit 'add' command, the
+    # file will be written to the repo for editing.
+    - name: Install default package.json
+      run: npm init --yes
+
+    # Uncomment when adding or updating dependencies in the package-lock.json
+    # and package.json files for ci.
+    - name: Install Node
+      run: |
+        npm i
+        npm install broken-link-checker
+
+    # Uncomment after package-lock.json and package.json files are updated.
+#    - name: Run with CI
+#      run: npm ci
+
+    - name: Audit Depends
+      run: npm audit
+    
+    # Detects any updates to package-lock.json and package.json and commits the
+    # files to root.
+    # see:
+    # https://github.com/marketplace/actions/add-commit?version=v4.1.0
+    # for use options.
+    - name: Commit Packages
+      uses: EndBug/add-and-commit@v4
+      with:
+        author_name: mitm001
+        author_email: mitm001@users.noreply.github.com
+        message: "Commit files for CI workflow"
+        # Commits these files to root if and only if there are changes.
+        add: "package-lock.json package.json"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
