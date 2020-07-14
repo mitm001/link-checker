@@ -1,10 +1,12 @@
 {
   "name": "link-checker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Website url tester.",
   "main": "index.js",
   "scripts": {
-    "checkUrl": "$(npm bin)/blc --help"
+    "linkCheckHelp": "$(npm bin)/blc --help"
+    "linkCheckWiki": "$(npm bin)/blc https://wiki.jmonkeyengine.org -ro"
+    "linkCheckJmeWiki": "$(npm bin)/blc https://mitm001.github.io/jme-wiki -ro"
   },
   "repository": {
     "type": "git",
