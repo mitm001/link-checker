@@ -4,8 +4,8 @@
   "description": "Website url tester.",
   "main": "index.js",
   "scripts": {
-    "linkCheckHelp": "$(npm bin)/blc --help"
-    "linkCheckWiki": "$(npm bin)/blc https://wiki.jmonkeyengine.org -ro"
+    "linkCheckHelp": "$(npm bin)/blc --help",
+    "linkCheckWiki": "$(npm bin)/blc https://wiki.jmonkeyengine.org -ro",
     "linkCheckJmeWiki": "$(npm bin)/blc https://mitm001.github.io/jme-wiki -ro"
   },
   "repository": {
