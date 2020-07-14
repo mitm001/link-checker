@@ -43,7 +43,7 @@ jobs:
       run: npm audit
 
     - name: List folders
-      run: ls -al ./usr/
+      run: ls -al /usr/
 
     - name: Check Website
 #      run: npm run linkCheckHelp
