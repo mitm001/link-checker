@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "linkCheckHelp": "$(npm bin)/blc --help",
-    "linkCheckWiki": "$(npm bin)/blc http://wiki.jmonkeyengine.org -rog",
-    "linkCheckJmeWiki": "$(npm bin)/blc http://mitm001.github.io/jme-wiki -rog"
+    "linkCheckWiki": "$(npm bin)/blc https://wiki.jmonkeyengine.org/ -ro",
+    "linkCheckJmeWiki": "$(npm bin)/blc https://mitm001.github.io/jme-wiki/ -ro"
   },
   "repository": {
     "type": "git",
