@@ -31,13 +31,13 @@ jobs:
     # Uncomment when adding or updating dependencies in the package-lock.json
     # and package.json files for ci.
 #    - name: Install Node
-    - run: npm i
-
-    - run: npm install broken-link-checker
+#      run: |
+#        npm i
+#        npm install broken-link-checker
 
     # Uncomment after package-lock.json and package.json files are updated.
-#    - name: Run with CI
-#      run: npm ci
+    - name: Run with CI
+      run: npm ci
 
     - name: Audit Depends
       run: npm audit
