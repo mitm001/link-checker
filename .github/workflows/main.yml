@@ -42,13 +42,14 @@ jobs:
     - name: Audit Depends
       run: npm audit
 
-    - name: List folders
-      run: ls -al /usr/
-
     - name: Check Website
 #      run: npm run linkCheckHelp
       run: npm run linkCheckWiki
 #      run: npm run linkCheckJmeWiki
+
+
+    - name: List folders
+      run: ls -al 
 
     # Detects any updates to package-lock.json and package.json and commits the
     # files to root.
