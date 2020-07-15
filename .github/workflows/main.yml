@@ -16,8 +16,8 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Clone repository
-#      run: git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki
-      run: git clone --single-branch --branch gh-pages https://wiki.jmonkeyengine.org
+#      run: git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
+      run: git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
 
     # https://github.com/marketplace/actions/link-checker?version=v1.2.2
     - name: Link Checker
