@@ -36,6 +36,7 @@ jobs:
     - name: Grep broken link classes
       run: |
         ls ../../
+        chmod +x grep
         grep -nr --include="*.html" "page unresolved" > ../../link-checker/out.txt
       working-directory: ./${{ steps.clone.outputs.repo_name }}/docs
 
