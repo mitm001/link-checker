@@ -26,7 +26,7 @@ jobs:
         args: -v -r -c 32 *
 
     - name: Grep for broken links classes
-      run: grep -n "class="page unresolved" *.html > ../../link-checker/out.txt
+      run: grep -n -r "class="page unresolved" *.html > ../../link-checker/out.txt
       working-directory: ./wiki/docs
 
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
