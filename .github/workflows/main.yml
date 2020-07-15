@@ -35,7 +35,7 @@ jobs:
     # used. This line will search for those classes and write out.txt file.
     - name: Grep broken link classes
       run: grep -nr --include="*.html" "page unresolved" > ../../link-checker/out.txt
-      working-directory: ./${{ steps.vars.outputs.repo_name }}/docs
+      working-directory: ./${{ steps.clone.outputs.repo_name }}/docs
 
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
     # for use options.
