@@ -28,7 +28,7 @@ jobs:
 
     # Antora sets a class on the href of "page unresolved" when a bad xref is
     # used. This line will search for those classes and write out.txt file.
-    - name: Grep for broken links classes
+    - name: Grep broken link classes
       run: grep -nr --include="*.html" "page unresolved" > ../../link-checker/out.txt
       working-directory: ./wiki/docs
 
