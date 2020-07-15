@@ -25,8 +25,9 @@ jobs:
       with:
         args: -v -r -c 32 *
 
-    - Grep for broken links classes
+    - name: Grep for broken links classes
       run: ls -al
+
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
     # for use options.
     - name: Commit Packages
