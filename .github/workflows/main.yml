@@ -26,7 +26,8 @@ jobs:
         args: -v -r -c 32 *
 
     - name: Grep for broken links classes
-      run: ls -al wiki
+      run: ls
+      working-directory: ./wiki/docs
 
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
     # for use options.
