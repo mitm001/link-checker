@@ -16,8 +16,13 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Clone repository
-      run: git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
-#      run: git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
+      id: clone
+      run: |
+        echo "::set-output name=repo_name::jme-wiki"
+        git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
+#      run: |
+#        echo "::set-output name=repo_name::wiki"
+#        git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
 
     # This will check external links only.
     # https://github.com/marketplace/actions/link-checker?version=v1.2.2
@@ -30,7 +35,7 @@ jobs:
     # used. This line will search for those classes and write out.txt file.
     - name: Grep broken link classes
       run: grep -nr --include="*.html" "page unresolved" > ../../link-checker/out.txt
-      working-directory: ./wiki/docs
+      working-directory: ./${{ steps.vars.outputs.repo_name }}/docs
 
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
     # for use options.
