@@ -26,7 +26,7 @@ jobs:
         args: -v -r -c 32 *
 
     - name: Grep for broken links classes
-      run: ls
+      run: grep -n "class="page unresolved" *.html > ../../link-checker/out.txt
       working-directory: ./wiki/docs
 
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
@@ -38,6 +38,6 @@ jobs:
         author_email: mitm001@users.noreply.github.com
         message: "Commit files for CI workflow"
         # Commits these files to root if and only if there are changes.
-        add: "link-checker/out.md"
+        add: "link-checker/out.md link-checker/out.txt"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
