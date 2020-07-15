@@ -19,14 +19,17 @@ jobs:
 #      run: git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
       run: git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
 
+    # This will check external links only.
     # https://github.com/marketplace/actions/link-checker?version=v1.2.2
     - name: Link Checker
       uses: peter-evans/link-checker@v1
       with:
         args: -v -r -c 32 *
 
+    # Antora sets a class on the href of "page unresolved" when a bad xref is
+    # used. This line will search for those classes and write out.txt file.
     - name: Grep for broken links classes
-      run: grep -n -r "class="page unresolved" *.html > ../../link-checker/out.txt
+      run: grep -n -r "class="page unresolved" *.html >> ../../link-checker/out.txt
       working-directory: ./wiki/docs
 
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
