@@ -72,7 +72,7 @@ jobs:
     - name: Grep broken link classes
       run: |
         ls -al
-        ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
+        ls -al ${{ github.workspace }}/${{ env.LINKCHECKER_OUTPUT_DIR }}
         grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
