@@ -35,8 +35,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # We have to create the link checker output directory first or it will set
-    # ROOT as user if left to do what it wants.
+    # We have to create the link checker output directory first or the github
+    # runner will set ROOT as user if left to do what it wants.
     - name: Clone repository
       id: clone
       run: |
