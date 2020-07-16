@@ -11,6 +11,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      OUTPUT_FOLDER: ${{ HOME}}/link-checker
 
     steps:
     - uses: actions/checkout@v2
@@ -24,22 +26,37 @@ jobs:
 #        echo "::set-output name=repo_name::wiki"
 #        git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
 
-    # This will check external links only.
+    # This will check external and image links only. The -c 32 can be increased
+    # to speed up build time at the cost of increased "HTTP error 429".
+    #
+    # Options:
+    #  -c, --concurrency <num-requests>  Set max number of concurrent HTTP requests. [default: 512]
+    #  -d, --document-root <directory>  Set document root directory for absolute paths.
+    #  -r, --recursive  Search Markdown and HTML files recursively
+    #  -t, --timeout <timeout>  Set timeout for HTTP requests in seconds. Disabled by default.
+    #  -x, --exclude <regex>  Regex of links to exclude from checking.
+    #  -v, --verbose  Be verbose.
+    #
+    # For other action config options see:
     # https://github.com/marketplace/actions/link-checker?version=v1.2.2
-#    - name: Link Checker
-#      uses: peter-evans/link-checker@v1
-#      with:
-#        args: -v -r -c 512 *
+    - name: Link Checker
+      uses: peter-evans/link-checker@v1
+      with:
+        args: -v -r -c 32 *
 
     # Antora sets a class on the href of "page unresolved" when a bad xref is
     # used. This line will search for those classes and write out.txt file.
+    #
+    # -c == count
+    # -n == line number
+    # -r == recursive
     - name: Grep broken link classes
-      run: grep -cnr --include="*.html" "page unresolved" > ../../link-checker/out.txt \ 
-        || echo "No broken links found." > ../../link-checker/out.txt
+      run: grep -cnr --include="*.html" "page unresolved" > ${{ OUTPUT_FOLDER }}/out.txt \
+        || echo "No broken links found." > ${{ OUTPUT_FOLDER }}/out.txt
       working-directory: ./${{ steps.clone.outputs.repo_name }}/docs
 
-    # https://github.com/marketplace/actions/add-commit?version=v4.1.0
     # for use options.
+    # https://github.com/marketplace/actions/add-commit?version=v4.1.0
     - name: Commit Packages
       uses: EndBug/add-and-commit@v4
       with:
