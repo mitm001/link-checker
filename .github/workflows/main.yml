@@ -21,7 +21,7 @@ name: Broken Link Check
 env:
   LINKCHECKER_OUTPUT_DIR: link-checked
   LINKCHECKER_OUTPUT_FILENAME: out.md
-  OUTPUT_FILE: ${{ github.workspace }}/${{ env.LINKCHECKER_OUTPUT_DIR }}/out.txt
+  OUTPUT_FILE: out.txt
 
 on:
   push:
@@ -70,8 +70,9 @@ jobs:
     # -n == line number
     # -r == recursive
     - name: Grep broken link classes
-      run: grep -cnr --include="*.html" "page unresolved" > ${{ env.OUTPUT_FILE }} \
-        || echo "No broken links found." > ${{ env.OUTPUT_FILE }}
+      run: grep -cnr --include="*.html" "page unresolved" > \
+        ${{ github.workspace }}/${{ env.OUTPUT_FILE }} \
+        || echo "No broken links found." > ${{ github.workspace }}/${{ env.OUTPUT_FILE }}
       working-directory: ./${{ steps.clone.outputs.repo_name }}/docs
 
     # for use options.
@@ -83,6 +84,7 @@ jobs:
         author_email: mitm001@users.noreply.github.com
         message: "Commit files for CI workflow"
         # Commits these files to root if and only if there are changes.
-        add: "link-checker/out.md link-checker/out.txt"
+        add: "${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.LINKCHECKER_OUTPUT_FILENAME }}
+          ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE}}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
