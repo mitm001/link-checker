@@ -50,7 +50,7 @@ jobs:
     # -n == line number
     # -r == recursive
     - name: Grep broken link classes
-      run: grep -cnr --include="*.html" "page unresolved" > ${{ OUTPUT_PATH }}/out.txt \
+      run: grep -cnr --include="*.html" "page unresolved" > ${{ env.OUTPUT_PATH }}/out.txt \
         || echo "No broken links found." > ${{ env.OUTPUT_PATH }}/out.txt
       working-directory: ./${{ steps.clone.outputs.repo_name }}/docs
 
