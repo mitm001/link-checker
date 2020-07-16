@@ -41,7 +41,7 @@ jobs:
     - name: Link Checker
       uses: peter-evans/link-checker@v1
       with:
-        args: -v -r -c 32 -x "(https:\/\/)?github\.com(^jMonkeyEngine\/wiki\/edit\/master).*" *
+        args: -v -r -c 32 -x "(https://github\.com/jMonkeyEngine/wiki/edit/master).*" *
 
     # Antora sets a class on the href of "page unresolved" when a bad xref is
     # used. This line will search for those classes and write out.txt file.
