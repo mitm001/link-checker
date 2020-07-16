@@ -39,9 +39,9 @@ jobs:
       id: clone
       run: |
         mkdir ${{ env.LINKCHECKER_OUTPUT_DIR }}
+        ls -al
         echo "::set-output name=repo_name::jme-wiki"
         git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
-#      run: |
 #        echo "::set-output name=repo_name::wiki"
 #        git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
 
