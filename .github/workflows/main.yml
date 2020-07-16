@@ -1,9 +1,26 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
+# This action will check for broken links in the supplied repository branch
+# (gh-pages). The link-checker action can be configured to execute on a schedule
+# and/or open an issue when a problem is found.
+#
+# The default use will write an out.md file to the link-checker directory. This
+# file can be searched for "ERROR", or in the case of images and files,
+# "no such file or directory". This info can be used to search in the supplied
+# repository for the broken link. It is not able to verify relative links beyond
+# the case that the target page exists.
+#
+# Antora will set a class="page unresolved" in the HREF attribute for any
+# relative link that is not valid so we use the grep command to check for this
+# class, and if found, write out the line to file using the environment variable
+# OUTPUT_FILE. This line can then be used to locate the broken link in the
+# supplied repository.
+#
+# Currently, the Antora UI inserts links into every page, one for editing each
+# page and one for navigating to the wiki repository. We use a regex to filter
+# out these as they tend to trigger "Too Many Requests (HTTP error 429)".
 name: Broken Link Check
 env:
-  OUTPUT_PATH: ${{ github.workspace }}/link-checker
+  OUTPUT_FILE: ${{ github.workspace }}/link-checker/out.txt
+
 on:
   push:
     branches: [ master ]
@@ -18,12 +35,12 @@ jobs:
 
     - name: Clone repository
       id: clone
-#      run: |
-#        echo "::set-output name=repo_name::jme-wiki"
-#        git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
       run: |
-        echo "::set-output name=repo_name::wiki"
-        git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
+        echo "::set-output name=repo_name::jme-wiki"
+        git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
+#      run: |
+#        echo "::set-output name=repo_name::wiki"
+#        git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
 
     # This will check external and image links only. The -c 32 can be increased
     # to speed up build time at the cost of increased "HTTP error 429".
@@ -50,8 +67,8 @@ jobs:
     # -n == line number
     # -r == recursive
     - name: Grep broken link classes
-      run: grep -cnr --include="*.html" "page unresolved" > ${{ env.OUTPUT_PATH }}/out.txt \
-        || echo "No broken links found." > ${{ env.OUTPUT_PATH }}/out.txt
+      run: grep -cnr --include="*.html" "page unresolved" > ${{ env.OUTPUT_FILE }} \
+        || echo "No broken links found." > ${{ env.OUTPUT_FILE }}
       working-directory: ./${{ steps.clone.outputs.repo_name }}/docs
 
     # for use options.
