@@ -71,9 +71,9 @@ jobs:
     # -r == recursive
     - name: Grep broken link classes
       run: grep -cnr --include="*.html" "page unresolved" > \
-        ${{ github.workspace }}/${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
+        ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
-        ${{ github.workspace }}/${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
+        ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
       working-directory: ./${{ steps.clone.outputs.repo_name }}/docs
 
     # for use options.
