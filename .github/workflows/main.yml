@@ -35,9 +35,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    # We have to create the link checker output directory first or it will set
+    # ROOT as user if left to do what it wants.
     - name: Clone repository
       id: clone
       run: |
+        mkdir ${{ env.LINKCHECKER_OUTPUT_DIR }}
         echo "::set-output name=repo_name::jme-wiki"
         git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
 #        echo "::set-output name=repo_name::wiki"
