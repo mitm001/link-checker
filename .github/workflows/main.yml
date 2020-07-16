@@ -19,7 +19,9 @@
 # out these as they tend to trigger "Too Many Requests (HTTP error 429)".
 name: Broken Link Check
 env:
-  OUTPUT_FILE: ${{ github.workspace }}/link-checker/out.txt
+  LINKCHECKER_OUTPUT_DIR: link-checked
+  LINKCHECKER_OUTPUT_FILENAME: out.md
+  OUTPUT_FILE: ${{ github.workspace }}/${{ env.LINKCHECKER_OUTPUT_DIR }}/out.txt
 
 on:
   push:
@@ -36,7 +38,7 @@ jobs:
     - name: Clone repository
       id: clone
       run: |
-        mkdir link-checker
+        mkdir ${{ env.LINKCHECKER_OUTPUT_DIR }}
         echo "::set-output name=repo_name::jme-wiki"
         git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
 #      run: |
