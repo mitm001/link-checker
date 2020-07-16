@@ -19,7 +19,7 @@
 # out these as they tend to trigger "Too Many Requests (HTTP error 429)".
 name: Broken Link Check
 env:
-  LINKCHECKER_OUTPUT_DIR: ${{ github.workspace }}/link-checker
+  LINKCHECKER_OUTPUT_DIR: ${{ github.workspace }}/links-checked
   LINKCHECKER_OUTPUT_FILENAME: out.md
   OUTPUT_FILE: out.txt
 
@@ -39,7 +39,6 @@ jobs:
       id: clone
       run: |
         mkdir ${{ env.LINKCHECKER_OUTPUT_DIR }}
-        ls -al
         echo "::set-output name=repo_name::jme-wiki"
         git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
 #        echo "::set-output name=repo_name::wiki"
@@ -70,10 +69,7 @@ jobs:
     # -n == line number
     # -r == recursive
     - name: Grep broken link classes
-      run: |
-        ls -al
-        ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
-        grep -cnr --include="*.html" "page unresolved" > \
+      run: grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
