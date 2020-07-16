@@ -3,7 +3,7 @@
 
 name: Broken Link Check
 env:
-  OUTPUT_FOLDER: ${{ GITHUB_WORKSPACE }}/link-checker
+  OUTPUT_FOLDER: ${{ github.workspace }}/link-checker
 on:
   push:
     branches: [ master ]
