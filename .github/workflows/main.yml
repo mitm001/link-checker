@@ -19,7 +19,7 @@
 # out these as they tend to trigger "Too Many Requests (HTTP error 429)".
 name: Broken Link Check
 env:
-  LINKCHECKER_OUTPUT_DIR: link-checked
+  LINKCHECKER_OUTPUT_DIR: ${{ github.workspace }}/link-checked
   LINKCHECKER_OUTPUT_FILENAME: out.md
   OUTPUT_FILE: out.txt
 
@@ -72,7 +72,7 @@ jobs:
     - name: Grep broken link classes
       run: |
         ls -al
-        ls -al ${{ github.workspace }}/${{ env.LINKCHECKER_OUTPUT_DIR }}
+        ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
         grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
