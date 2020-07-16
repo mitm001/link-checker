@@ -69,7 +69,9 @@ jobs:
     # -n == line number
     # -r == recursive
     - name: Grep broken link classes
-      run: grep -cnrs --include="*.html" "page unresolved" > \
+      run: |
+        ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
+        grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
