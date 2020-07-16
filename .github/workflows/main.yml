@@ -12,7 +12,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      OUTPUT_FOLDER: ${{ HOME}}/link-checker
+      OUTPUT_FOLDER: ${{ GITHUB_WORKSPACE }}/link-checker
 
     steps:
     - uses: actions/checkout@v2
