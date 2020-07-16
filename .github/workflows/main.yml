@@ -3,7 +3,7 @@
 
 name: Broken Link Check
 env:
-  OUTPUT_FOLDER: ${{ github.workspace }}/link-checker
+  OUTPUT_PATH: ${{ github.workspace }}/link-checker
 on:
   push:
     branches: [ master ]
@@ -50,8 +50,8 @@ jobs:
     # -n == line number
     # -r == recursive
     - name: Grep broken link classes
-      run: grep -cnr --include="*.html" "page unresolved" > ${{ OUTPUT_FOLDER }}/out.txt \
-        || echo "No broken links found." > ${{ OUTPUT_FOLDER }}/out.txt
+      run: grep -cnr --include="*.html" "page unresolved" > ${{ OUTPUT_PATH }}/out.txt \
+        || echo "No broken links found." > ${{ env.OUTPUT_PATH }}/out.txt
       working-directory: ./${{ steps.clone.outputs.repo_name }}/docs
 
     # for use options.
