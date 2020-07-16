@@ -38,7 +38,7 @@ jobs:
     - name: Clone repository
       id: clone
       run: |
-        touch ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
+        mkdir ${{ env.LINKCHECKER_OUTPUT_DIR }}
         echo "::set-output name=repo_name::jme-wiki"
         git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
 #        echo "::set-output name=repo_name::wiki"
@@ -69,7 +69,7 @@ jobs:
     # -n == line number
     # -r == recursive
     - name: Grep broken link classes
-      run: grep -cnr --include="*.html" "page unresolved" > \
+      run: grep -cnrs --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
