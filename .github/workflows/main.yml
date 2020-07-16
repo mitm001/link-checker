@@ -2,8 +2,8 @@
 # (gh-pages). The link-checker action can be configured to execute on a schedule
 # and/or open an issue when a problem is found.
 #
-# The default use will write an out.md file to the link-checker directory. This
-# file can be searched for "ERROR", or in the case of images and files,
+# We write an LINKCHECKER_OUTPUT_FILENAME file to the LINKCHECKER_OUTPUT_DIR.
+# This file can be searched for "ERROR", or in the case of images and files,
 # "no such file or directory". This info can be used to search in the supplied
 # repository for the broken link. It is not able to verify relative links beyond
 # the case that the target page exists.
@@ -19,7 +19,7 @@
 # out these as they tend to trigger "Too Many Requests (HTTP error 429)".
 name: Broken Link Check
 env:
-  LINKCHECKER_OUTPUT_DIR: ${{ github.workspace }}/link-checked
+  LINKCHECKER_OUTPUT_DIR: ${{ github.workspace }}/link-checker
   LINKCHECKER_OUTPUT_FILENAME: out.md
   OUTPUT_FILE: out.txt
 
