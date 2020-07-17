@@ -25,7 +25,7 @@ env:
 
 on:
   push:
-    branches: [ master ]
+    branches: [ link-checker ]
 
 jobs:
   build:
@@ -34,6 +34,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref link-checker
+        # Number of commits to fetch. 0 indicates all history.
+        fetch-depth: 1
 
     # We have to create the link checker output directory first or the github
     # runner will set ROOT as user if left to do what it wants.
@@ -41,10 +45,10 @@ jobs:
       id: clone
       run: |
         mkdir -p ${{ env.LINKCHECKER_OUTPUT_DIR }}
-        echo "::set-output name=repo_name::jme-wiki"
-        git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
-#        echo "::set-output name=repo_name::wiki"
-#        git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
+#        echo "::set-output name=repo_name::jme-wiki"
+#        git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
+        echo "::set-output name=repo_name::wiki"
+        git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
 
     # This will check external and image links only. The -c 32 can be increased
     # to speed up build time at the cost of increased "HTTP error 429".
