@@ -86,7 +86,7 @@ jobs:
 
     # for use options.
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
-    - name: Commit Packages
+    - name: Commit files
       uses: EndBug/add-and-commit@v4
       with:
         author_name: mitm001
