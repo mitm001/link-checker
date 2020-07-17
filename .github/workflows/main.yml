@@ -14,7 +14,7 @@
 # OUTPUT_FILE. This line can then be used to locate the broken link in the
 # supplied repository.
 #
-# Currently, the Antora UI inserts links into every page, one for editing each
+# The Antora UI inserts links into the header of every page, one for editing a
 # page and one for navigating to the wiki repository. We use a regex to filter
 # out these as they tend to trigger "Too Many Requests (HTTP error 429)".
 name: Broken Link Check
@@ -49,8 +49,10 @@ jobs:
         git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
 #        echo "::set-output name=repo_name::jme-wiki"
 #        git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
-    # This will check external and image links only. The -c 32 can be increased
-    # to speed up build time at the cost of increased "HTTP error 429".
+
+    # This will check external and image links but seems to miss relative links.
+    # The -c 32 can be increased to speed up build times at the expense of
+    # increasing Too Many Requests "HTTP error 429" errors.
     #
     # Options:
     #  -c, --concurrency <num-requests>  Set max number of concurrent HTTP requests. [default: 512]
@@ -67,8 +69,9 @@ jobs:
       with:
         args: -x ^.*(\/edit\/|wiki[^/]).*$ -v -r ${{ steps.clone.outputs.repo_name }}/docs -c 32
 
-    # Antora sets a class on the href of "page unresolved" when a bad xref is
-    # used. This line will search for those classes and write out.txt file.
+    # Antora sets a class on the href of "page unresolved" when a bad xref
+    # (relative) link is used. This line will search for those classes and
+    # write them to the OUTPUT_FILE.
     #
     # -c == count
     # -n == line number
