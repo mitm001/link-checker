@@ -25,11 +25,11 @@ env:
 
 defaults:
   run:
-    working-directory: ./${{ steps.clone.outputs.repo_name }}/docs
+    working-directory: wiki/docs
 
 on:
   push:
-    branches: [ link-checker ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -39,7 +39,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: link-checker
+#        ref: link-checker
         # Number of commits to fetch. 0 indicates all history.
         fetch-depth: 1
 
