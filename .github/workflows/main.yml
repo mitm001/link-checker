@@ -23,10 +23,6 @@ env:
   LINKCHECKER_OUTPUT_FILENAME: out.md
   OUTPUT_FILE: out.txt
 
-defaults:
-  run:
-    working-directory: wiki/docs
-
 on:
   push:
     branches: [ master ]
