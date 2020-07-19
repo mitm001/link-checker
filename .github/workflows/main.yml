@@ -67,7 +67,7 @@ jobs:
     - name: Link checker
       uses: peter-evans/link-checker@v1
       with:
-        args: -x ^.*(\/edit\/.*|\/wiki|\.org\/?)$ -c 32 -r ${{ steps.clone.outputs.repo_name }}/docs 
+        args: -x ^.*(\/edit\/.*|\/wiki|\.org\/?)$ -c 32 -r ${{ steps.clone.outputs.repo_name }}/docs/tutorials
 
     # Antora sets a class on the href of "page unresolved" when a bad xref
     # (relative) link is used. This line will search for those classes and
@@ -82,7 +82,7 @@ jobs:
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
-      working-directory: ./${{ steps.clone.outputs.repo_name }}/docs
+      working-directory: ./${{ steps.clone.outputs.repo_name }}/docs/tutorials
 
     # for use options.
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
