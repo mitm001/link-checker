@@ -24,7 +24,6 @@ env:
   OUTPUT_FILE: out.txt
   LINK_CHECK_REPO: https://github.com/mitm001/jme-wiki
 #  LINK_CHECK_REPO: https://github.com/jMonkeyEngine/wiki.git
-
 on:
   push:
     branches: [ master ]
@@ -44,8 +43,10 @@ jobs:
     # We have to create the link checker output directory first or the github
     # runner will set ROOT as user if left to do what it wants.
     - name: Clone repository
+      id: clone
       run: |
         mkdir -p ${{ env.LINKCHECKER_OUTPUT_DIR }}
+        echo ::set-output name=repo::${LINK_CHECK_REPO##*/}
         git clone --single-branch --branch gh-pages ${{ env.LINK_CHECK_REPO }}
 
     # This will check external and image links but seems to miss relative links.
@@ -65,7 +66,7 @@ jobs:
     - name: Link checker
       uses: peter-evans/link-checker@v1
       with:
-        args: -x ^.*(\/edit\/.*|\/wiki|\.org\/?)$ -c 32 -r ${LINK_CHECK_REPO##*/}/docs
+        args: -x ^.*(\/edit\/.*|\/wiki|\.org\/?)$ -c 32 -r ${{ steps.clone.outputs.repo }}/docs
 
     # Antora sets a class on the href of "page unresolved" when a bad xref
     # (relative) link is used. This line will search for those classes and
@@ -81,7 +82,7 @@ jobs:
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
-      working-directory: ./${LINK_CHECK_REPO##*/}/docs
+      working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
     # for use options.
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
