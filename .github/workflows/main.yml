@@ -77,7 +77,6 @@ jobs:
     # -r == recursive
     - name: Grep broken link classes
       run: |
-        echo "${{ steps.idcheck.outputs.repo }}"
         grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
