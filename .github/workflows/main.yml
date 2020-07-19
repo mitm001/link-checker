@@ -22,8 +22,8 @@ env:
   LINKCHECKER_OUTPUT_DIR: ${{ github.workspace }}/checked-links
   LINKCHECKER_OUTPUT_FILENAME: out.md
   OUTPUT_FILE: out.txt
-#  LINK_CHECK_REPO: https://github.com/mitm001/jme-wiki
-  LINK_CHECK_REPO: https://github.com/jMonkeyEngine/wiki
+  LINK_CHECK_REPO: https://github.com/mitm001/jme-wiki
+#  LINK_CHECK_REPO: https://github.com/jMonkeyEngine/wiki
 on:
   push:
     branches: [ master ]
@@ -78,7 +78,7 @@ jobs:
     - name: Grep broken link classes
       run: |
         grep -cnr --include="*.html" "page unresolved" > \
-        ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} 2>&1
+        ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} 2>/dev/null
       working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
     # for use options.
