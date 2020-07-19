@@ -78,7 +78,7 @@ jobs:
     - name: Grep broken link classes
       run: |
         grep -cnr --include="*.html" "page unresolved" > \
-        ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} || true
+        ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} || echo "no broken links" >&2
       working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
     # for use options.
