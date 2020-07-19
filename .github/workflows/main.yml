@@ -23,7 +23,7 @@ env:
   LINKCHECKER_OUTPUT_FILENAME: out.md
   OUTPUT_FILE: out.txt
 #  LINK_CHECK_REPO: https://github.com/mitm001/jme-wiki
-  LINK_CHECK_REPO: https://github.com/jMonkeyEngine/wiki.git
+  LINK_CHECK_REPO: https://github.com/jMonkeyEngine/wiki
 on:
   push:
     branches: [ master ]
