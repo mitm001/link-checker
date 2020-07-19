@@ -41,7 +41,9 @@ jobs:
         fetch-depth: 1
     - name: Check id
       id: idcheck
-      run: echo ::set-output name=repo::${LINK_CHECK_REPO##*/}
+      run: |
+        echo ::set-output name=repo::${LINK_CHECK_REPO##*/}
+        echo "${{ steps.idcheck.outputs.repo }}"
 
     # We have to create the link checker output directory first or the github
     # runner will set ROOT as user if left to do what it wants.
