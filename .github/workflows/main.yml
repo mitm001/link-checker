@@ -23,6 +23,7 @@ env:
   LINKCHECKER_OUTPUT_FILENAME: out.md
   OUTPUT_FILE: out.txt
   LINK_CHECK_REPO: https://github.com/mitm001/jme-wiki
+#  LINK_CHECK_REPO: https://github.com/jMonkeyEngine/wiki.git
 
 on:
   push:
@@ -39,21 +40,13 @@ jobs:
 #        ref: link-checker
         # Number of commits to fetch. 0 indicates all history.
         fetch-depth: 1
-    - name: Check id
-      id: idcheck
-      run: |
-        echo ::set-output name=repo::${LINK_CHECK_REPO##*/}
 
     # We have to create the link checker output directory first or the github
     # runner will set ROOT as user if left to do what it wants.
     - name: Clone repository
-      id: clone
       run: |
         mkdir -p ${{ env.LINKCHECKER_OUTPUT_DIR }}
-        echo "::set-output name=repo_name::jme-wiki"
-        git clone --single-branch --branch gh-pages https://github.com/mitm001/jme-wiki.git
-#        echo "::set-output name=repo_name::wiki"
-#        git clone --single-branch --branch gh-pages https://github.com/jMonkeyEngine/wiki.git
+        git clone --single-branch --branch gh-pages ${{ env.LINK_CHECK_REPO }}
 
     # This will check external and image links but seems to miss relative links.
     # The -c 32 can be increased to speed up build times at the expense of
@@ -72,7 +65,7 @@ jobs:
     - name: Link checker
       uses: peter-evans/link-checker@v1
       with:
-        args: -x ^.*(\/edit\/.*|\/wiki|\.org\/?)$ -c 32 -r ${{ steps.clone.outputs.repo_name }}/docs/sdk
+        args: -x ^.*(\/edit\/.*|\/wiki|\.org\/?)$ -c 32 -r ${LINK_CHECK_REPO##*/}/docs
 
     # Antora sets a class on the href of "page unresolved" when a bad xref
     # (relative) link is used. This line will search for those classes and
@@ -88,7 +81,7 @@ jobs:
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
-      working-directory: ./${{ steps.clone.outputs.repo_name }}/docs/sdk
+      working-directory: ./${LINK_CHECK_REPO##*/}/docs
 
     # for use options.
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
