@@ -43,7 +43,6 @@ jobs:
       id: idcheck
       run: |
         echo ::set-output name=repo::${LINK_CHECK_REPO##*/}
-        echo "${{ steps.idcheck.outputs.repo }}"
 
     # We have to create the link checker output directory first or the github
     # runner will set ROOT as user if left to do what it wants.
@@ -84,6 +83,7 @@ jobs:
     # -r == recursive
     - name: Grep broken link classes
       run: |
+        echo "${{ steps.idcheck.outputs.repo }}"
         grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "No broken links found." > \
