@@ -22,6 +22,7 @@ env:
   LINKCHECKER_OUTPUT_DIR: ${{ github.workspace }}/checked-links
   LINKCHECKER_OUTPUT_FILENAME: out.md
   OUTPUT_FILE: out.txt
+  LINK_CHECK_REPO: https://github.com/mitm001/jme-wiki
 
 on:
   push:
@@ -38,6 +39,9 @@ jobs:
 #        ref: link-checker
         # Number of commits to fetch. 0 indicates all history.
         fetch-depth: 1
+    - name: Check id
+      id: idcheck
+      run: echo ::set-output name=repo::${LINK_CHECK_REPO##*/}
 
     # We have to create the link checker output directory first or the github
     # runner will set ROOT as user if left to do what it wants.
