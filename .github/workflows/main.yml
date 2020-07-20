@@ -77,9 +77,15 @@ jobs:
     # -r == recursive
     - name: Grep broken link classes
       run: |
+        echo ::ls -al ./${{ env.LINKCHECKER_OUTPUT_DIR }}/::
+        echo ::ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}::
+        ls -al
         grep -cnr --include="*.html" "page unresolved" > \
-        ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
+        ./${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "no page unresolved" && rm -f ./${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
+        echo ::ls -al ./${{ env.LINKCHECKER_OUTPUT_DIR }}/::
+        echo ::ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}::
+        ls -al        
       working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
     # for use options.
