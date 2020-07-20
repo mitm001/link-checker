@@ -77,15 +77,11 @@ jobs:
     # -r == recursive
     - name: Grep broken link classes
       run: |
-        echo ::ls -al ./${{ env.LINKCHECKER_OUTPUT_DIR }}/::
-        echo ::ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}::
+        ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
         ls -al
         grep -cnr --include="*.html" "page unresolved" > \
         ./${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
-        || echo "no page unresolved" && rm -f ./${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
-        echo ::ls -al ./${{ env.LINKCHECKER_OUTPUT_DIR }}/::
-        echo ::ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}::
-        ls -al        
+        || echo "no page unresolved" && rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
       working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
     # for use options.
@@ -97,7 +93,7 @@ jobs:
         author_email: mitm001@users.noreply.github.com
         message: "Commit files for CI workflow"
         # Commits these files to root if and only if there are changes.
-        add: "./${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.LINKCHECKER_OUTPUT_FILENAME }}
-          ./${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE}}"
+        add: "${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.LINKCHECKER_OUTPUT_FILENAME }}
+          ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE}}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
