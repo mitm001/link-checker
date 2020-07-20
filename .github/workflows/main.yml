@@ -84,6 +84,9 @@ jobs:
         || echo "no page unresolved" && rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
       working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
+    - name: Check root
+      run: ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
+
     # for use options.
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
     - name: Commit files
