@@ -80,7 +80,7 @@ jobs:
         ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
         grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
-        || ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }} && echo "no page unresolved" && rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
+        || echo "no page unresolved" && rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
       working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
     - name: Check root
@@ -94,6 +94,8 @@ jobs:
         author_name: mitm001
         author_email: mitm001@users.noreply.github.com
         message: "Commit files for CI workflow"
+        remove: "${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.LINKCHECKER_OUTPUT_FILENAME }}
+          ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE}}"
         # Commits these files to root if and only if there are changes.
         add: "${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.LINKCHECKER_OUTPUT_FILENAME }}
           ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE}}"
