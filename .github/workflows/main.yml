@@ -20,8 +20,8 @@
 name: Broken Link Check
 env:
   LINKCHECKER_OUTPUT_DIR: ${{ github.workspace }}/checked-links
-  LINKCHECKER_OUTPUT_FILENAME: out.md
-  OUTPUT_FILE: out.txt
+  LINKCHECKER_OUTPUT_FILENAME: linkchecker.md
+  OUTPUT_FILE: unresolved.md
   LINK_CHECK_REPO: https://github.com/mitm001/jme-wiki
 #  LINK_CHECK_REPO: https://github.com/jMonkeyEngine/wiki
 on:
@@ -77,14 +77,10 @@ jobs:
     # -r == recursive
     - name: Grep broken link classes
       run: |
-        ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
         grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "no page unresolved" && rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
       working-directory: ./${{ steps.clone.outputs.repo }}/docs
-
-    - name: Check root
-      run: ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
 
     # for use options.
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
@@ -95,7 +91,6 @@ jobs:
         author_email: mitm001@users.noreply.github.com
         message: "Commit files for CI workflow"
         # Commits these files to root if and only if there are changes.
-        add: '${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.LINKCHECKER_OUTPUT_FILENAME }}
-          ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE}}'
+        add: '${{ env.LINKCHECKER_OUTPUT_DIR }}/*.md'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
