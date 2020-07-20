@@ -78,7 +78,6 @@ jobs:
     - name: Grep broken link classes
       run: |
         ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
-        ls -al
         grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }} && echo "no page unresolved" && rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
