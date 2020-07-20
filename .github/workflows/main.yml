@@ -20,8 +20,8 @@
 name: Broken Link Check
 env:
   LINKCHECKER_OUTPUT_DIR: ${{ github.workspace }}/checked-links
-  LINKCHECKER_OUTPUT_FILENAME: linkchecker-out.md
-  OUTPUT_FILE: grep-out.txt
+  LINKCHECKER_OUTPUT_FILENAME: out.md
+  OUTPUT_FILE: out.txt
   LINK_CHECK_REPO: https://github.com/mitm001/jme-wiki
 #  LINK_CHECK_REPO: https://github.com/jMonkeyEngine/wiki
 on:
