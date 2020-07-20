@@ -49,6 +49,19 @@ jobs:
         echo ::set-output name=repo::${LINK_CHECK_REPO##*/}
         git clone --single-branch --branch gh-pages ${{ env.LINK_CHECK_REPO }}
 
+    # for use options.
+    # https://github.com/marketplace/actions/add-commit?version=v4.1.0
+    - name: Commit files
+      uses: EndBug/add-and-commit@v4
+      with:
+        author_name: mitm001
+        author_email: mitm001@users.noreply.github.com
+        message: "Commit files for CI workflow"
+        # Commits these files to root if and only if there are changes.
+        remove: '${{ env.LINKCHECKER_OUTPUT_DIR }}/*.md'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     # This will check external and image links but seems to miss relative links.
     # The -c 32 can be increased to speed up build times at the expense of
     # increasing Too Many Requests "HTTP error 429" errors.
@@ -66,7 +79,7 @@ jobs:
     - name: Link checker
       uses: peter-evans/link-checker@v1
       with:
-        args: -x ^.*(\/edit\/.*|\/wiki|\.org\/?)$ -c 32 -r ${{ steps.clone.outputs.repo }}/docs/wiki
+        args: -x ^.*(\/edit\/.*|\/wiki|\.org\/?)$ -c 32 -r ${{ steps.clone.outputs.repo }}/docs
 
     # Antora sets a class on the href of "page unresolved" when a bad xref
     # (relative) link is used. This line will search for those classes and
@@ -80,7 +93,7 @@ jobs:
         grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "no page unresolved" && rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
-      working-directory: ./${{ steps.clone.outputs.repo }}/docs/wiki
+      working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
     # for use options.
     # https://github.com/marketplace/actions/add-commit?version=v4.1.0
