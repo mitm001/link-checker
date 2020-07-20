@@ -80,7 +80,7 @@ jobs:
         ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
         ls -al
         grep -cnr --include="*.html" "page unresolved" > \
-        ./${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
+        ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "no page unresolved" && rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
       working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
