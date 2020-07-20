@@ -46,21 +46,10 @@ jobs:
       id: clone
       run: |
         mkdir -p ${{ env.LINKCHECKER_OUTPUT_DIR }}
+        git rm --cached jme-wiki
+        rm -rf ${{ env.LINKCHECKER_OUTPUT_DIR }}/*.md
         echo ::set-output name=repo::${LINK_CHECK_REPO##*/}
         git clone --single-branch --branch gh-pages ${{ env.LINK_CHECK_REPO }}
-
-    # for use options.
-    # https://github.com/marketplace/actions/add-commit?version=v4.1.0
-    - name: Commit files
-      uses: EndBug/add-and-commit@v4
-      with:
-        author_name: mitm001
-        author_email: mitm001@users.noreply.github.com
-        message: "Commit files for CI workflow"
-        # Commits these files to root if and only if there are changes.
-        remove: '${{ env.LINKCHECKER_OUTPUT_DIR }}/*.md'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     # This will check external and image links but seems to miss relative links.
     # The -c 32 can be increased to speed up build times at the expense of
