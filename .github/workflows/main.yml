@@ -81,6 +81,7 @@ jobs:
         grep -cnr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
         || echo "no page unresolved" && rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
+        ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}/
       working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
     # for use options.
