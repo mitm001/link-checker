@@ -1,9 +1,3 @@
-jme3/features.html:1090:<p><a href="#xref:physics/physics.adoc" class="page unresolved">Bullet physics binding</a></p>
-jme3/features.html:1094:<p><a href="#jme3/advanced/walking_character.adoc" class="page unresolved">Physical characters</a></p>
-jme3/features.html:1097:<p><a href="#jme3/advanced/hinges_and_joints.adoc" class="page unresolved">Physical joints and hinges</a></p>
-jme3/features.html:1100:<p><a href="#jme3/advanced/vehicles.adoc" class="page unresolved">Ray-cast vehicle</a></p>
-jme3/features.html:1103:<p><a href="#jme3/advanced/ragdoll.adoc" class="page unresolved">Ragdoll physics</a></p>
-jme3/features.html:1109:<p><a href="#jme3/advanced/bullet_multithreading.adoc" class="page unresolved">Multi-threaded physics</a></p>
 jme3/features.html:1153:<p><a href="#jme3/advanced/materials_overview.adoc" class="page unresolved">Materials Overview</a><br>
 jme3/features.html:1164:<p><a href="#jme3/advanced/materials_overview.adoc" class="page unresolved">Materials Overview</a></p>
 jme3/features.html:1174:<a href="#jme3/advanced/effects_overview.adoc" class="page unresolved">Effects Overview</a></p>
