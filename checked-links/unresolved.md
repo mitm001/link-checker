@@ -11,7 +11,7 @@ jme3/features.html:1648:<p><a href="#jme3/external/blender/blender_ogre_compatib
 jme3/features.html:1651:<p><a href="#jme3/advanced/sky.adoc" class="page unresolved">SkyBox and SkyDome</a></p>
 jme3/features.html:1666:<p><a href="#jme3/advanced/hud.adoc" class="page unresolved">Orthogonal (Billboard) node</a></p>
 jme3/features.html:1669:<p><a href="#jme3/advanced/nifty_gui.adoc" class="page unresolved">Nifty GUI integration</a></p>
-jme3/features.html:1681:<p><a href="#jme3/advanced/application_states.adoc" class="page unresolved">Application States</a> and <a href="#jme3/advanced/custom_controls.adoc" class="page unresolved">Controls</a> to implement <a href="#jme3/advanced/update_loop.adoc" class="page unresolved">game logic</a></p>
+jme3/features.html:1681:<p><a href="#" class="page unresolved">Application States</a> and <a href="#jme3/advanced/custom_controls.adoc" class="page unresolved">Controls</a> to implement <a href="#jme3/advanced/update_loop.adoc" class="page unresolved">game logic</a></p>
 jme3/features.html:1684:<p><a href="#jme3/advanced/cinematics.adoc" class="page unresolved">Cinematics and motion paths</a></p>
 jme3/features.html:1687:<p><a href="#jme3/advanced/camera.adoc" class="page unresolved">Camera System</a></p>
 jme3/features.html:1710:<p><a href="#jme3/advanced/combo_moves.adoc" class="page unresolved">Combo moves</a></p>
