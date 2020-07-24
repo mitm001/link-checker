@@ -8,7 +8,7 @@ documentation.html:1169:<p><a href="#jme3.adoc#documentation-for-intermediate-us
 documentation.html:1175:<p><a href="#jme3/external/blender.adoc" class="page unresolved">Blender Modeling Guide</a></p>
 documentation.html:1180:<p><a href="#jme3.adoc#documentation-for-advanced-users" class="page unresolved">jME3 advanced documentation</a></p>
 documentation.html:1200:<p>Get inspired by existing <a href="#jme3/contributions.adoc" class="page unresolved">contributions</a></p>
-physics/joint/hinges_and_joints.html:1012:<p>Create a SimpleApplication with a <a href="#../../jme3/advanced/physics.adoc" class="page unresolved">BulletAppState</a></p>
+physics/joint/hinges_and_joints.html:1012:<p>Create a SimpleApplication with a <a href="#../../" class="page unresolved">BulletAppState</a></p>
 physics/joint/hinges_and_joints.html:1125:<p>You&#8217;ll understand that, when creating any type of joint, it is important to correctly specify the DOFs that the joint restricts, and the DOFs that the joint allows. For the typical DOF of a <a href="#../../jme3/advanced/ragdoll.adoc" class="page unresolved">ragDoll</a> character&#8217;s limbs, jME even offers a special joint, <code>ConeJoint</code>.</p>
 physics/control/vehicles.html:1026:<p>Create a SimpleApplication with a <a href="#jme3/advanced/physics.adoc" class="page unresolved">BulletAppState</a></p>
 physics/control/vehicles.html:1273:<p>Not shown here is the standard way how we map the input keys to actions (see full code sample). Also refer to <a href="#jme3/advanced/input_handling.adoc" class="page unresolved">Input Handling</a>).</p>
