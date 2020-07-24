@@ -1,5 +1,3 @@
-jme3/simpleapplication_from_the_commandline.html:1281:<p>This directory structure will allow <a href="../core/app/simpleapplication.html" class="page">SimpleApplication</a>'s default <a href="#core:/app/asset_manager.adoc" class="page unresolved">AssetManager</a> to load media files from your <code>assets</code> directory, like in this example:</p>
-jme3/features.html:1000:<p><a href="#jme3/advanced/asset_manager.adoc" class="page unresolved">Asset Manager</a> for loading multi-media files and 3D models including asset name code completion</p>
 jme3/features.html:1046:<p><a href="#jme3/advanced/level_of_detail.adoc" class="page unresolved">Level of Detail (LOD) generator</a></p>
 jme3/features.html:1090:<p><a href="#jme3/advanced/physics.adoc" class="page unresolved">JBullet physics binding</a></p>
 jme3/features.html:1094:<p><a href="#jme3/advanced/walking_character.adoc" class="page unresolved">Physical characters</a></p>
