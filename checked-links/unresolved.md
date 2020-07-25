@@ -8,7 +8,7 @@ tutorials/concepts/faq.html:1025:<p><a href="#ROOT:jme3/intermediate/simpleappli
 tutorials/concepts/faq.html:1028:<p><a href="#ROOT:jme3/intermediate/appsettings.adoc" class="page unresolved">AppSettings</a></p>
 tutorials/concepts/faq.html:1089:<p><a href="#ROOT:jme3/advanced/logging.adoc" class="page unresolved">Logging</a></p>
 tutorials/concepts/faq.html:1224:<p><a href="#ROOT:jme3/advanced/3d_models.adoc" class="page unresolved">3D Models</a></p>
-tutorials/concepts/faq.html:1474:<p><a href="#concepts/how_to_use_materials.adoc" class="page unresolved">How To Use Materials</a></p>
+tutorials/concepts/faq.html:1474:<p><a href="#" class="page unresolved">How To Use Materials</a></p>
 tutorials/concepts/faq.html:1509:<p><a href="#concepts/how_to_use_materials.adoc" class="page unresolved">How To Use Materials</a></p>
 tutorials/concepts/faq.html:1549:<p><a href="#ROOT:jme3/advanced/light_and_shadow.adoc" class="page unresolved">Light and Shadow</a></p>
 tutorials/concepts/faq.html:1583:<p><a href="#concepts/how_to_use_materials.adoc" class="page unresolved">How To Use Materials</a></p>
