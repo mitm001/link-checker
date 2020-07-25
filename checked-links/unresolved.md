@@ -15,7 +15,7 @@ contributions/es/entitysystem.html:1009:<p><a href="#../../jme3/contributions/en
 contributions/es/entitysystem.html:1012:<p><a href="#../../jme3/contributions/entitysystem/interviews.adoc" class="page unresolved">Entity System Approaches and Interviews</a></p>
 contributions/es/entitysystem.html:1025:<p><a href="#../../jme3/contributions/entitysystem/beginner.adoc" class="page unresolved">Zay-ES Beginner</a></p>
 contributions/es/entitysystem.html:1028:<p><a href="#../../jme3/contributions/entitysystem/entityset.adoc" class="page unresolved">The EntitySet</a></p>
-contributions/es/entitysystem.html:1049:<p><a href="#../../jme3/contributions/entitysystem/examples/damagesystem.adoc" class="page unresolved">Making a Damage System</a></p>
+contributions/es/entitysystem.html:1049:<p><a href="#../../" class="page unresolved">Making a Damage System</a></p>
 contributions/es/entitysystem.html:1052:<p><a href="#../../jme3/contributions/entitysystem/examples/own_logic_thread.adoc" class="page unresolved">Your Own Logic Thread</a></p>
 contributions/ai/steer_behaviours.html:1014:<p>The steer behaviors AI is integrated with MonkeyBrains so before start coding be sure that you have checked the <a href="#jme3/advanced/monkey_brains.adoc" class="page unresolved">monkey brains documentation</a>.</p>
 contributions/ai/recast.html:1281:<p>If there is problem with building C++ project see <a href="#../../jme3/advanced/building_recast.adoc" class="page unresolved">link</a>.</p>
