@@ -1,4 +1,4 @@
-tutorials/how-to/articles/pbr/pbr_part3.html:996:<p><a href="#jme3/advanced/pbr_part1.adoc" class="page unresolved">Physically Based Rendering – Part one</a></p>
+tutorials/how-to/articles/pbr/pbr_part3.html:996:<p><a href="#" class="page unresolved">Physically Based Rendering – Part one</a></p>
 tutorials/how-to/articles/pbr/pbr_part3.html:1004:<p>In <a href="#jme3/advanced/pbr_part2.adoc" class="page unresolved">Physically Based Rendering – Part Two</a>, I talked about the basics of PBR for developers, and explained the different steps of the lighting process with PBR.</p>
 tutorials/how-to/articles/pbr/pbr_part3.html:1315:<p><a href="#jme3/advanced/pbr_part1.adoc" class="page unresolved">Physically Based Rendering – Part one</a></p>
 tutorials/how-to/articles/pbr/pbr_part3.html:1318:<p><a href="#jme3/advanced/pbr_part2.adoc" class="page unresolved">Physically Based Rendering – Part Two</a></p>
