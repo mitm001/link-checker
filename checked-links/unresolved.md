@@ -1,22 +1,4 @@
-contributions/es/entitysystem/advanced.html:986:<p>If you are new to this subject please read the <a href="#jme3/contributions/entitysystem/introduction.adoc" class="page unresolved">Entity System Introduction</a> first.</p>
-contributions/es/entitysystem/detailed.html:989:<p>You should 've read a brief introduction here: <a href="#jme3/contributions/entitysystem/introduction.adoc" class="page unresolved">jme3:contributions:entitysystem:introduction</a></p>
-contributions/es/entitysystem/detailed.html:1344:<p>Here is a short one to help you get start quickly : <a href="#jme3/contributions/entitysystem/terms.adoc" class="page unresolved">terms</a></p>
-contributions/es/entitysystem/detailed.html:1555:<p>Detailed explaination : <a href="#jme3/contributions/entitysystem/points.adoc" class="page unresolved">points</a></p>
-contributions/es/entitysystem/detailed.html:2126:<p>Wiki: <a href="#jme3/contributions/entitysystem.adoc" class="page unresolved">jme3:contributions:entitysystem</a></p>
-contributions/es/entitysystem/detailed.html:2236:<p>[4] <a href="#jme3/contributions/entitysystem/introduction.adoc" class="page unresolved">jme3:contributions:entitysystem:introduction</a></p>
-contributions/es/entitysystem/interviews.html:1046:Detail explanation of abbove points <a href="#jme3/contributions/entitysystem/points.adoc" class="page unresolved">points</a></p>
-contributions/es/entitysystem/interviews.html:1118:<p>Wiki: <a href="#jme3/contributions/entitysystem.adoc" class="page unresolved">jme3:contributions:entitysystem</a></p>
-contributions/es/entitysystem/beginner.html:986:<p>If you are new Entity Systems please read the <a href="#../../../jme3/contributions/entitysystem/introduction.adoc" class="page unresolved">Entity System Introduction</a> first.</p>
-contributions/es/entitysystem/beginner.html:1207:It is strongly recommended that you read the <a href="#../../../jme3/contributions/entitysystem/entityset.adoc" class="page unresolved">Entity Set tutorial</a> after reading this article.</p>
-contributions/es/entitysystem/beginner.html:1217:<p>Read the <a href="#../../../jme3/contributions/entitysystem/entityset.adoc" class="page unresolved">tutorial</a> about entity sets</p>
-contributions/es/entitysystem/introduction.html:1085:<p>For a more detailed and technical view, have a look at the <a href="#../../../jme3/contributions/entitysystem/advanced.adoc" class="page unresolved">Entity System Advanced</a> article</p>
-contributions/es/entitysystem.html:1003:<p><a href="#../../jme3/contributions/entitysystem/introduction.adoc" class="page unresolved">Entity System Introduction</a></p>
-contributions/es/entitysystem.html:1009:<p><a href="#../../jme3/contributions/entitysystem/detailed.adoc" class="page unresolved">Entity System Detailed</a></p>
-contributions/es/entitysystem.html:1012:<p><a href="#../../jme3/contributions/entitysystem/interviews.adoc" class="page unresolved">Entity System Approaches and Interviews</a></p>
-contributions/es/entitysystem.html:1025:<p><a href="#../../jme3/contributions/entitysystem/beginner.adoc" class="page unresolved">Zay-ES Beginner</a></p>
-contributions/es/entitysystem.html:1028:<p><a href="#../../jme3/contributions/entitysystem/entityset.adoc" class="page unresolved">The EntitySet</a></p>
-contributions/es/entitysystem.html:1049:<p><a href="#../../" class="page unresolved">Making a Damage System</a></p>
-contributions/es/entitysystem.html:1052:<p><a href="#../../jme3/contributions/entitysystem/examples/own_logic_thread.adoc" class="page unresolved">Your Own Logic Thread</a></p>
+contributions/es/entitysystem/entitysystem.html:1048:<p><a href="#jme3/contributions/entitysystem/examples/own_logic_thread.adoc" class="page unresolved">Your Own Logic Thread</a></p>
 contributions/ai/steer_behaviours.html:1014:<p>The steer behaviors AI is integrated with MonkeyBrains so before start coding be sure that you have checked the <a href="#jme3/advanced/monkey_brains.adoc" class="page unresolved">monkey brains documentation</a>.</p>
 contributions/ai/recast.html:1281:<p>If there is problem with building C++ project see <a href="#../../jme3/advanced/building_recast.adoc" class="page unresolved">link</a>.</p>
 contributions/ai/recast.html:1314:<p><a href="#../../jme3/advanced/building_recast.adoc" class="page unresolved">How to build the native recast bindings</a></p>
@@ -78,7 +60,6 @@ contributions/gui/tonegodgui/indicator.html:987:<p>The Indicator uses the 3 stan
 contributions/gui/tonegodgui/password.html:987:<p>It uses the standard 3 constructors as shown in the <a href="#../../../jme3/contributions/tonegodgui/quickstart.adoc" class="page unresolved">Quick Start Guide</a>.</p>
 contributions/contributions.html:1140:<p><a href="#jme3/contributions/particles.adoc" class="page unresolved">Wiki Page</a></p>
 contributions/contributions.html:1189:<p><a href="#jme3/contributions/tonegodgui.adoc" class="page unresolved">Wiki Page</a></p>
-contributions/contributions.html:1287:<p><a href="#jme3/contributions/entitysystem.adoc" class="page unresolved">Wiki Page</a></p>
 networking/headless_server.html:1065:<p>Integrate <a href="#networking.adoc.adoc" class="page unresolved">SpiderMonkey</a>, to provide game updates to the server over a network.</p>
 core/terrain/terrain.html:1023:<p>Streaming <a href="#jme3/advanced/endless_terraingrid.adoc" class="page unresolved">terrain grid</a> (i.e. infinite terrain)</p>
 core/system/appsettings.html:1003:<p><strong>Note:</strong> Other runtime settings are covered in <a href="#../../jme3/intermediate/simpleapplication.adoc" class="page unresolved">SimpleApplication</a>.</p>
