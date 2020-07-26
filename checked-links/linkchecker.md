@@ -1814,17 +1814,17 @@ jme-wiki/docs/core/scene/shape/shape.html
 		Too Many Requests (HTTP error 429)
 jme-wiki/docs/github_tips.html
 	ERROR	_images/wiki/github_issue_preview.png
-		Stat jme-wiki/docs/_images/wiki/github_issue_preview.png: no such file or directory
+		Stat jme-wiki/docs/_images/wiki/github_issue_preview.png: no such 
 	ERROR	_images/wiki/github_issue_write.png
-		Stat jme-wiki/docs/_images/wiki/github_issue_write.png: no such file or directory
+		Stat jme-wiki/docs/_images/wiki/github_issue_write.png: no such
 	ERROR	_images/wiki/github_jme_forum.png
-		Stat jme-wiki/docs/_images/wiki/github_jme_forum.png: no such file or directory
+		Stat jme-wiki/docs/_images/wiki/github_jme_forum.png: no such
 	ERROR	_images/wiki/github_multiline.png
-		Stat jme-wiki/docs/_images/wiki/github_multiline.png: no such file or directory
+		Stat jme-wiki/docs/_images/wiki/github_multiline.png: no such
 	ERROR	_images/wiki/github_tag.png
-		Stat jme-wiki/docs/_images/wiki/github_tag.png: no such file or directory
+		Stat jme-wiki/docs/_images/wiki/github_tag.png: no such
 	ERROR	_images/wiki/github_tag_menue.png
-		Stat jme-wiki/docs/_images/wiki/github_tag_menue.png: no such file or directory
+		Stat jme-wiki/docs/_images/wiki/github_tag_menue.png: no such
 	ERROR	http://hub.jmonkeyengine.org/t/lemur-gems-2-inputmapper-delegates/28710
 		Too Many Requests (HTTP error 429)
 	ERROR	http://hub.jmonkeyengine.org/t/lemur-gems-3-scene-picking/28713
