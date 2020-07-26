@@ -1,13 +1,4 @@
-jme3/features.html:1046:<p><a href="#plugin/fonts.adoc" class="page unresolved">Custom font creator</a></p>
 core/app/simpleapplication.html:1128:<p>This object represents the user&#8217;s ear for the jME3 <a href="#core/audio.adoc" class="page unresolved">audio</a> system.</p>
-core/util/sky.html:1099:<p><a href="#xref:tutorials:how-to/util/free_skymaps.adoc" class="page unresolved">How to create free skymaps</a></p>
-core/gui/nifty_gui_java_layout.html:1491:<p>The font used is jME3&#8217;s default font &#8220;Interface/Fonts/Default.fnt&#8221; which is included in the jMonkeyEngine.JAR. You can add your own fonts to your own <code>assets/Interface</code> directory. Set your font to the one you created during the start of the <a href="#nifty_gui_xml_layout.adoc#implement-your-gui-layout" class="page unresolved">Gui Implementation</a> phase of your game.</p>
-core/gui/nifty_gui.html:1029:<p><a href="#jme3/advanced/nifty_gui_xml_layout.adoc" class="page unresolved">Lay out the GUI in XML</a> – or –</p>
-core/gui/nifty_gui.html:1032:<p><a href="#jme3/advanced/nifty_gui_java_layout.adoc" class="page unresolved">Lay out the GUI in Java</a></p>
-core/gui/nifty_gui.html:1042:<p><a href="#jme3/advanced/nifty_gui_overlay.adoc" class="page unresolved">Overlay the User Interface Over the Screen</a>  – or –</p>
-core/gui/nifty_gui.html:1045:<p><a href="#jme3/advanced/nifty_gui_projection.adoc" class="page unresolved">Project the User Interface Onto a Texture</a></p>
-core/gui/nifty_gui.html:1051:<p><a href="#jme3/advanced/nifty_gui_java_interaction.adoc" class="page unresolved">Interact with the GUI from Java</a></p>
-core/gui/nifty_gui.html:1079:<p>Screen are <a href="#" class="page unresolved">controlled by a Java Controller class</a>.</p>
 core/gui/nifty_gui_scenarios.html:1224:<p>Get the full <a href="#loading_screen.adoc" class="page unresolved">Loading Screen</a> tutorial here.</p>
 core/gui/nifty_gui_scenarios.html:1232:<p>Get the full <a href="#jme3/advanced/nifty_gui_popup_menu.adoc" class="page unresolved">Nifty GUI PopUp Menu</a> tutorial here.</p>
 core/scene/control/custom_controls.html:1246:<p>To learn more about <code>write()</code> and <code>read()</code>, see <a href="#save_and_load.adoc" class="page unresolved">Save and Load</a></p>
