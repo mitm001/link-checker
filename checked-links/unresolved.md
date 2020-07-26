@@ -1,1 +1,0 @@
-tutorials/beginner/hello_collision.html:1289:<p>For a detailed description of the separate jar files see <a href="#getting-started/jme3_source_structure.adoc#structure-of-jmonkeyengine3-jars" class="page unresolved">this list</a>.</p>
