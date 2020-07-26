@@ -798,7 +798,7 @@ jme-wiki/docs/core/effect/bloom_and_glow.html
 		Too Many Requests (HTTP error 429)
 jme-wiki/docs/core/gui/nifty_gui.html
 	ERROR	../_attachments/NiftyGuiDemo.zip
-		Stat jme-wiki/docs/core/_attachments/NiftyGuiDemo.zip: no such file or directory
+		Stat jme-wiki/docs/core/_attachments/NiftyGuiDemo.zip: no such 
 	ERROR	http://hub.jmonkeyengine.org/t/lemur-gems-1-inputmapper-based-camera-movement/28703
 		Too Many Requests (HTTP error 429)
 	ERROR	http://hub.jmonkeyengine.org/t/lemur-gems-2-inputmapper-delegates/28710
@@ -923,7 +923,7 @@ jme-wiki/docs/core/cinematic/motionpath.html
 		Too Many Requests (HTTP error 429)
 jme-wiki/docs/core/gui/nifty_gui_java_layout.html
 	ERROR	../_attachments/NiftyGuiDemo.zip
-		Stat jme-wiki/docs/core/_attachments/NiftyGuiDemo.zip: no such file or directory
+		Stat jme-wiki/docs/core/_attachments/NiftyGuiDemo.zip: no such
 	ERROR	http://hub.jmonkeyengine.org/t/lemur-gems-1-inputmapper-based-camera-movement/28703
 		Too Many Requests (HTTP error 429)
 	ERROR	http://hub.jmonkeyengine.org/t/lemur-gems-2-inputmapper-delegates/28710
