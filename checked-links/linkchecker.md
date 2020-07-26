@@ -2260,7 +2260,7 @@ jme-wiki/docs/sdk/material_editing.html
 		Too Many Requests (HTTP error 429)
 jme-wiki/docs/sdk/plugin/fonts.html
 	ERROR	../_images/plugin/external/font-5.png
-		Stat jme-wiki/docs/sdk/_images/plugin/external/font-5.png: no such file or directory
+		Stat jme-wiki/docs/sdk/_images/plugin/external/font-5.png: no such 
 	ERROR	http://hub.jmonkeyengine.org/t/lemur-gems-1-inputmapper-based-camera-movement/28703
 		Too Many Requests (HTTP error 429)
 	ERROR	http://hub.jmonkeyengine.org/t/lemur-gems-2-inputmapper-delegates/28710
