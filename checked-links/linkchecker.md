@@ -2083,13 +2083,13 @@ jme-wiki/docs/sdk/development/setup.html
 		Too Many Requests (HTTP error 429)
 jme-wiki/docs/sdk/plugin/fonts.html
 	ERROR	../_images/plugin/external/font-2.png
-		Stat jme-wiki/docs/sdk/_images/plugin/external/font-2.png: no such file or directory
+		Stat jme-wiki/docs/sdk/_images/plugin/external/font-2.png: no such
 	ERROR	../_images/plugin/external/font-3.png
-		Stat jme-wiki/docs/sdk/_images/plugin/external/font-3.png: no such file or directory
+		Stat jme-wiki/docs/sdk/_images/plugin/external/font-3.png: no such
 	ERROR	../_images/plugin/external/font-4.png
-		Stat jme-wiki/docs/sdk/_images/plugin/external/font-4.png: no such file or directory
+		Stat jme-wiki/docs/sdk/_images/plugin/external/font-4.png: no such
 	ERROR	../_images/plugin/external/font-5.png
-		Stat jme-wiki/docs/sdk/_images/plugin/external/font-5.png: no such file or directory
+		Stat jme-wiki/docs/sdk/_images/plugin/external/font-5.png: no such
 	ERROR	http://hub.jmonkeyengine.org/t/lemur-gems-1-inputmapper-based-camera-movement/28703
 		Too Many Requests (HTTP error 429)
 	ERROR	http://hub.jmonkeyengine.org/t/lemur-gems-2-inputmapper-delegates/28710
