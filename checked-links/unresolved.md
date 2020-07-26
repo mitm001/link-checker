@@ -7,7 +7,7 @@ core/gui/nifty_gui.html:1032:<p><a href="#jme3/advanced/nifty_gui_java_layout.ad
 core/gui/nifty_gui.html:1042:<p><a href="#jme3/advanced/nifty_gui_overlay.adoc" class="page unresolved">Overlay the User Interface Over the Screen</a>  – or –</p>
 core/gui/nifty_gui.html:1045:<p><a href="#jme3/advanced/nifty_gui_projection.adoc" class="page unresolved">Project the User Interface Onto a Texture</a></p>
 core/gui/nifty_gui.html:1051:<p><a href="#jme3/advanced/nifty_gui_java_interaction.adoc" class="page unresolved">Interact with the GUI from Java</a></p>
-core/gui/nifty_gui.html:1079:<p>Screen are <a href="#jme3/advanced/nifty_gui_java_interaction.adoc" class="page unresolved">controlled by a Java Controller class</a>.</p>
+core/gui/nifty_gui.html:1079:<p>Screen are <a href="#" class="page unresolved">controlled by a Java Controller class</a>.</p>
 core/gui/nifty_gui_scenarios.html:1224:<p>Get the full <a href="#loading_screen.adoc" class="page unresolved">Loading Screen</a> tutorial here.</p>
 core/gui/nifty_gui_scenarios.html:1232:<p>Get the full <a href="#jme3/advanced/nifty_gui_popup_menu.adoc" class="page unresolved">Nifty GUI PopUp Menu</a> tutorial here.</p>
 core/scene/control/custom_controls.html:1246:<p>To learn more about <code>write()</code> and <code>read()</code>, see <a href="#save_and_load.adoc" class="page unresolved">Save and Load</a></p>
