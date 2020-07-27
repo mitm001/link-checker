@@ -46,7 +46,6 @@ jobs:
       id: clone
       run: |
         mkdir -p ${{ env.LINKCHECKER_OUTPUT_DIR }}
-#        rm -rf ${{ env.LINKCHECKER_OUTPUT_DIR }}/*.md
         echo ::set-output name=repo::${LINK_CHECK_REPO##*/}
         git clone --single-branch --branch gh-pages ${{ env.LINK_CHECK_REPO }}
 
@@ -80,8 +79,10 @@ jobs:
       run: |
         grep -nr --include="*.html" "page unresolved" > \
         ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }} \
-        || sudo rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
-        ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}/
+        || rm -f ${{ env.LINKCHECKER_OUTPUT_DIR }}/${{ env.OUTPUT_FILE }}
+        ls -al ${{ env.LINKCHECKER_OUTPUT_DIR }}
+        cd ~
+        ls -al
       working-directory: ./${{ steps.clone.outputs.repo }}/docs
 
     # for use options.
