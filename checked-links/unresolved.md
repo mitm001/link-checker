@@ -1,5 +1,6 @@
 wiki/wiki_admin.html:985:<pre class="highlightjs highlight">
 <code class="language-text hljs" data-lang="text">
 tutorials/beginner/hello_collision.html:1289:&lt;p&gt;For a detailed description
-of the separate jar files see &lt;a href="#getting-started/jme3_source_structure.adoc#structure-of-jmonkeyengine3-jars"
+of the separate jar files see &lt;a href=
+"#getting-started/jme3_source_structure.adoc#structure-of-jmonkeyengine3-jars"
 class="page unresolved"&gt;this list&lt;/a&gt;.&lt;/p&gt;</code></pre>
