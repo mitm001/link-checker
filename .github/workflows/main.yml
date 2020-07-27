@@ -36,7 +36,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-#        ref: link-checker
         # Number of commits to fetch. 0 indicates all history.
         fetch-depth: 1
 
