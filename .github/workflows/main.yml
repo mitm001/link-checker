@@ -39,8 +39,8 @@ jobs:
         # Number of commits to fetch. 0 indicates all history.
         fetch-depth: 1
 
-    # We have to create the link checker output directory first or the github
-    # runner will set ROOT as user if left to do what it wants.
+    # We create the link checker output directory first if does not exist or the
+    # github runner will set ROOT as user if left to do what it wants.
     - name: Clone repository
       id: clone
       run: |
