@@ -46,7 +46,7 @@ jobs:
       id: clone
       run: |
         mkdir -p ${{ env.LINKCHECKER_OUTPUT_DIR }}
-        rm -rf ${{ env.LINKCHECKER_OUTPUT_DIR }}/*.md
+        //rm -rf ${{ env.LINKCHECKER_OUTPUT_DIR }}/*.md
         echo ::set-output name=repo::${LINK_CHECK_REPO##*/}
         git clone --single-branch --branch gh-pages ${{ env.LINK_CHECK_REPO }}
 
