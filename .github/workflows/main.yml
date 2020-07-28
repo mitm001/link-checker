@@ -65,7 +65,7 @@ jobs:
     - name: Link checker
       uses: peter-evans/link-checker@v1
       with:
-        args: -x ^.*(\/edit\/.*|\/wiki|\.org\/?)$ -c 32 -r *
+        args: -x ^.*(\/edit\/.*|\/wiki|\.org\/?)$ -c 32 -r ${{ steps.clone.outputs.repo }}/docs
 
     # Antora sets a class on the href of "page unresolved" when a bad xref
     # (relative) link is used. This line will search for those classes and
