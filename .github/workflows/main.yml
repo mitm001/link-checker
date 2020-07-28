@@ -22,8 +22,8 @@ env:
   LINKCHECKER_OUTPUT_DIR: ${{ github.workspace }}/checked-links
   LINKCHECKER_OUTPUT_FILENAME: linkchecker.md
   OUTPUT_FILE: unresolved.md
-  LINK_CHECK_REPO: https://github.com/mitm001/jme-wiki
-#  LINK_CHECK_REPO: https://github.com/jMonkeyEngine/wiki
+  LINK_CHECK_REPO: https://github.com/jMonkeyEngine/wiki
+#  LINK_CHECK_REPO: https://github.com/mitm001/jme-wiki
 on:
   push:
     branches: [ master ]
